@@ -3,7 +3,7 @@ package van_02.Model;
 import java.io.Serializable;
 
 public class UserModel implements Serializable{
-
+	@SuppressWarnings("serial")
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
@@ -12,7 +12,11 @@ public class UserModel implements Serializable{
 	private String phone;
 	private String image;
 
-
+	
+	public UserModel()
+	{
+		
+	}
 	public UserModel(int id, String name,String password, String email, String phone, String image) {
 		super();
 		this.id = id;

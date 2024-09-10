@@ -8,6 +8,8 @@ public interface IUserDAO {
 	List<UserModel> findall();
 	
 	UserModel findByID(int id); 
-	void sign_in (String email, String password);
+	UserModel findByName(String name);
+	UserModel login (String username, String password);
 	void insert (UserModel user);
+
 }
