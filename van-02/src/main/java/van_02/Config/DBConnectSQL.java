@@ -9,7 +9,7 @@ public class DBConnectSQL {
 	
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String url = "jdbc:sqlserver://LAPTOP-7D271VJA:1433;databaseName=database_tuan02;user=sa;password=123456;encrypt=true;trustServerCertificate=true";
+        String url = "jdbc:sqlserver://LAPTOP-7D271VJA:1433;databaseName=database_tuan02;user=sa;password=123456;encrypt=true;TrustServerCertificate=true";
         return DriverManager.getConnection(url);
     }
 
