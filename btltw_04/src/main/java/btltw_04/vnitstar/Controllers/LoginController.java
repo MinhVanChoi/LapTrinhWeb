@@ -61,7 +61,6 @@ public class LoginController extends HttpServlet {
 				  req.setAttribute("alert", alertMsg);
 				  req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
 				  }
-			  
 		}
 	
 	private void saveRemeberMe(HttpServletResponse response, String

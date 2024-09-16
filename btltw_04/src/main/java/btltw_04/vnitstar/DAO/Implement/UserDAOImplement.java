@@ -86,6 +86,21 @@ public class UserDAOImplement implements IUserDAO {
 	            e.printStackTrace();
 	        }
 	}
+	
+	public void updatePassword(String email, String newPassword)
+	{
+	        String query = "update users set user_password = ? where user_email= ?";
+	        	       
+	        try {
+	            conn = DBConnectMySQL.getDatabaseConnection();
+	            ps = conn.prepareStatement(query);
+	            ps.setString(1, newPassword);
+	            ps.setString(2, email);
+	            ps.executeUpdate();
+	        	} catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	}
 
 	@Override
 	public UserModel findByUserName(String username) {
@@ -169,8 +184,7 @@ public class UserDAOImplement implements IUserDAO {
 	
 	public static void main(String[] agrs) {
 		IUserDAO test = new UserDAOImplement();
-		UserModel t = new UserModel("kiet","1","kiet@","truong kiet","avatar.jsp",2,"121212",Date.valueOf("2024-09-15"));
-		test.insert(t);
+		
 	}
 
 	

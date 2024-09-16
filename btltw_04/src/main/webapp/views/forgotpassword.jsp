@@ -12,8 +12,6 @@
 </c:if>
 <h2>Forgot Password</h2>
     <form action="forgotpassword" method="post">
-     <label for="username">Enter your username:</label>
-        <input type="username" id="username" name="username" required>
         <label for="email">Enter your email:</label>
         <input type="email" id="email" name="email" required>
         

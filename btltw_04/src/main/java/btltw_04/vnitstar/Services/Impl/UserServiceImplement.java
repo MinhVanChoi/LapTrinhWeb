@@ -2,6 +2,7 @@ package btltw_04.vnitstar.Services.Impl;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Random;
 
 import btltw_04.vnitstar.DAO.IUserDAO;
 import btltw_04.vnitstar.DAO.Implement.UserDAOImplement;
@@ -53,6 +54,11 @@ public class UserServiceImplement implements IUserService{
 		@Override
 		public void insert(UserModel user) {
 			userDAO.insert(user);
+		}
+		
+		public void updatePassword(String email, String NewPassword)
+		{
+			userDAO.updatePassword(email, NewPassword);
 		}
 	
 	public static void main(String[] agrs)

@@ -1,5 +1,6 @@
 package btltw_04.vnitstar.Controllers;
 import java.io.IOException;
+import java.util.Random;
 
 import btltw_04.vnitstar.Models.UserModel;
 import btltw_04.vnitstar.Services.IUserService;
@@ -32,10 +33,14 @@ public class ForgotPasswordController extends HttpServlet {
 		 resp.setCharacterEncoding("UTF-8");
 		 req.setCharacterEncoding("UTF-8");
 		String email = req.getParameter("email");
-		String username = req.getParameter("username");
 		 String alertMsg="";
-		  if (service.checkExistEmail(email) && service.checkExistUsername(username)) {
-			  alertMsg = "Password đã gửi về email";
+		  if (service.checkExistEmail(email)) {
+				Random random = new Random();
+				int randomFourDigitNumber = 1000 + random.nextInt(9000);
+				String NewPassword = String.format("%04d", randomFourDigitNumber);
+			  	alertMsg = "Password đã gửi về email: "+ NewPassword;
+				service.updatePassword(email, NewPassword); 
+				
 		  }
 		  else
 		  {
