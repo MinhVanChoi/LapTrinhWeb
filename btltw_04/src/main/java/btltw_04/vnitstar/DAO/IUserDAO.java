@@ -10,7 +10,8 @@ public interface IUserDAO {
 	void insert(UserModel user);
 	void updatePassword(String email, String NewPassword);
 	UserModel findByUserName(String username);
-	boolean checkExistEmail(String email);
 	boolean checkExistUsername(String username);
 	boolean checkExistPhone(String phone);
+	boolean checkExistEmail(String email);
+	
 }

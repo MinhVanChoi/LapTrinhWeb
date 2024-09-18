@@ -101,7 +101,7 @@ public class UserDAOImplement implements IUserDAO {
 	            e.printStackTrace();
 	        }
 	}
-
+	
 	@Override
 	public UserModel findByUserName(String username) {
 		String query = "SELECT * FROM users where user_name = ? ";

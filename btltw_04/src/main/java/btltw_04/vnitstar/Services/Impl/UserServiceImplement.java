@@ -20,6 +20,16 @@ public class UserServiceImplement implements IUserService{
 		}
 		return null;
 	}
+	
+	@Override
+	public void insert(UserModel user) {
+		userDAO.insert(user);
+	}
+	
+	public void updatePassword(String email, String NewPassword)
+	{
+		userDAO.updatePassword(email, NewPassword);
+	}
 
 	@Override
 	public UserModel FindByUserName(String username) {
@@ -50,16 +60,7 @@ public class UserServiceImplement implements IUserService{
 		public boolean checkExistPhone(String phone) {
 		return userDAO.checkExistPhone(phone);
 		}
-		
-		@Override
-		public void insert(UserModel user) {
-			userDAO.insert(user);
-		}
-		
-		public void updatePassword(String email, String NewPassword)
-		{
-			userDAO.updatePassword(email, NewPassword);
-		}
+
 	
 	public static void main(String[] agrs)
 	{

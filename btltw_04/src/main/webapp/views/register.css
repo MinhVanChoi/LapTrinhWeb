@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('https://c4.wallpaperflare.com/wallpaper/531/951/621/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-preview.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    max-width: 90%;
+    height: auto;
+    background: transparent; /* Thay đổi màu nền */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Thay đổi màu viền */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #ffffff; /* Màu chữ cho tiêu đề */
+    margin-bottom: 20px;
+}
+
+.inputbox {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 310px;
+    border-bottom: 2px solid #ffffff; /* Thay đổi màu viền cho input */
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ffffff; /* Màu chữ cho nhãn */
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+   top: -5px; /* Kéo nhãn lên cao hơn khi nhập dữ liệu */
+    font-size: 0.9em; /* Thay đổi kích thước nhãn khi kéo lên */
+    color: #ffffff; /* Màu chữ cho nhãn */
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #ffffff; /* Màu chữ cho input */
+}
+
+.clearfix {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button {
+    width: 90%;
+    height: 40px;
+    border-radius: 40px;
+    background: #000000; /* Màu nền cho nút */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+button.cancelbtn {
+	background: none; /* Nền trong suốt */
+    color: #ffffff; /* Màu chữ cho nút hủy */
+    border: 2px solid #ffffff; /* Thêm viền để làm nổi bật */
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 20px; /* Khoảng cách phía trên */
+    padding: 10px 20px; /* Thêm padding để nút lớn hơn */
+    border-radius: 40px; /* Để giữ hình dạng tròn */
+}
+
+
+
+.register {
+    font-size: 0.9em;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.register a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    color: red; 
+    margin-bottom: 15px; 
+}

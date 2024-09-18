@@ -1,48 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title> Đăng kí</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://localhost:5740/btltw_04/views/register.css"> 
 </head>
 <body>
-<form action="register" style="border:1px solid #ccc" method="post">
-  <div class="container">
-  		<c:if test="${alert !=null}">
-		<h3 class="alert alert-danger">${alert}</h3>
-</c:if>
-<section> </section>
-    <h1>Register</h1>
-    <p>Điền vào ok ?.</p>
-    <hr>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="register" method="post">
+                    <h2>Đăng Ký</h2>
+                    <c:if test="${alert != null}">
+                        <h3 class="alert alert-danger" aria-live="assertive">${alert}</h3>
+                    </c:if>
 
-    <label for="username"><b>UserName</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+                    <div class="inputbox">
+                        <input type="text" name="username" required>
+                        <label for="username">UserName</label>
+                    </div>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+                    <div class="inputbox">
+                        <input type="password" name="password" required>
+                        <label for="psw">Mật khẩu</label>
+                    </div>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+                    <div class="inputbox">
+                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
 
-    <label for="email"><b>Full Name</b></label>
-    <input type="text" placeholder="Enter your full name" name="fullname" required>
+                    <div class="inputbox">
+                        <input type="text" name="fullname" required>
+                        <label for="fullname">Họ và Tên</label>
+                    </div>
 
-    <label for="email"><b>Phone</b></label>
-    <input type="text" placeholder="Enter your phone" name="phone" required>
+                    <div class="inputbox">
+                        <input type="text" name="phone" required>
+                        <label for="phone">Số điện thoại</label>
+                    </div>
 
+                    <p>Bằng cách tạo tài khoản, bạn đồng ý với <a href="#" style="color:dodgerblue">Điều khoản & Quyền riêng tư</a>.</p>
 
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <a href="login.jsp"><button type="button" class="cancelbtn">Cancel</button> </a>
-      <button type="submit" class="register">Register</button>
-    </div>
-  </div>
-
-</form>
-
-
+                    <div class="clearfix">
+                        <a href="login.jsp">
+                            <button type="button" class="cancelbtn">Hủy</button>
+                        </a>
+                        <button type="submit" class="register">Đăng Ký</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
