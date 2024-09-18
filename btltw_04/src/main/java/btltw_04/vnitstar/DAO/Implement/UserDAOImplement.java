@@ -99,6 +99,8 @@ public class UserDAOImplement implements IUserDAO {
 	            ps.executeUpdate();
 	        	} catch (Exception e) {
 	            e.printStackTrace();
+	            
+	            
 	        }
 	}
 	
