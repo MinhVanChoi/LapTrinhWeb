@@ -12,13 +12,13 @@
                     <div class="form-group">
                       <label for="username" class="col-lg-4 control-label">Username <span class="require">*</span></label>
                       <div class="col-lg-8">
-                        <input type="text" class="form-control" id="username">
+                        <input type="text" class="form-control" id="username" name="username">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
                       <div class="col-lg-8">
-                        <input type="text" class="form-control" id="password">
+                        <input type="text" class="form-control" id="password" name = "password">
                       </div>
                     </div>
                     <div class="row">

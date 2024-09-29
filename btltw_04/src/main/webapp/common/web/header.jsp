@@ -46,8 +46,8 @@
 						href="<%=request.getContextPath()%>/register">Register</a> <%
  } else {
 	 
- String fullname = (String) session.getAttribute("account.user_fullname");
- %> <a href="<%=request.getContextPath()%>/member/myaccount"><%=fullname%></a>
+ String fullname = (String) session.getAttribute("account.fullname");
+ %> <a href="<%=request.getContextPath()%>/profile"><%= fullname %></a>
 						| <a href="<%=request.getContextPath()%>/logout">Logout</a> <%
  }
  %>
@@ -65,7 +65,7 @@
 <!-- BEGIN HEADER -->
 <div class="header">
 	<div class="container">
-		<a class="site-logo" href="shop-index.html"><img
+		<a class="site-logo" href="${pageContext.request.contextPath}/home"><img
 			src="${URL}assets/frontend/layout/img/logos/logo-shop-red.png"
 			alt="Metronic Shop UI"></a> <a href="javascript:void(0);"
 			class="mobi-toggler"><i class="fa fa-bars"></i></a>

@@ -39,12 +39,12 @@ public class UserServiceImplement implements IUserService {
 	}
 
 	@Override
-	public boolean register(String username, String password, String email, String fullname, String phone) {
+	public boolean register(String username, String password, String email) {
 		if (userDAO.checkExistUsername(username)) {
 			return false;
 		}
 		userDAO.insert(
-				new UserModel(username, password, email, fullname, null, 4, phone, Date.valueOf(LocalDate.now())));
+				new UserModel(username, password, email, null, null, 4, null, Date.valueOf(LocalDate.now())));
 		return true;
 	}
 
@@ -66,7 +66,7 @@ public class UserServiceImplement implements IUserService {
 	
 	public static void main(String[] agrs) {
 		IUserService test = new UserServiceImplement();
-		test.register("z", "1", "z@", "NTD", "113");
+		test.updateProfile("choi minh van", "012333","java.png", "van");
 	}
 	
 

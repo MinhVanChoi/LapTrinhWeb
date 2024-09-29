@@ -6,6 +6,11 @@ public class Constant {
 
 	public static class Path {
 		public static final String REGISTER = "/views/register.jsp";
+		
 	}
 
+	 public static final String UPLOAD_DIRECTORY = "uploads";
+	 public static final String DEFAULT_FILENAME = "default.file";
+	 
+	 
 }

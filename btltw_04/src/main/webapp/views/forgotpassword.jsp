@@ -17,7 +17,7 @@
         
         <button type="submit">Submit</button>
         <br>
-         <a href="login.jsp"><button type="button" class="cancelbtn">Cancel</button> </a>
+         <a href="${pageContext.request.contextPath}/login"><button type="button" class="cancelbtn">Cancel</button> </a>
     </form>
 
 </body>

@@ -1,8 +1,9 @@
 package btltw_04.vnitstar.Controllers;
-
+import java.io.File;
 import java.io.IOException;
 
 import btltw_04.vnitstar.Models.UserModel;
+import btltw_04.vnitstar.utils.Constant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,8 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebServlet(urlPatterns = { "/home" })
-public class HomeController extends HttpServlet {
+@WebServlet(urlPatterns = { "/profile" })
+public class ProfileController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -27,14 +28,11 @@ public class HomeController extends HttpServlet {
 			req.setAttribute("email", u.getEmail());
 			req.setAttribute("fullname", u.getFullName());
 			req.setAttribute("phone", u.getPhone());
+            req.setAttribute("image", u.getAvatar());
+            
 		}
-		req.getRequestDispatcher("/views/user/home.jsp").forward(req, resp);
+		req.getRequestDispatcher("/views/user/profile.jsp").forward(req, resp);
 
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-	}
-
+	
 }
