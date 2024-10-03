@@ -23,20 +23,37 @@ public class CategoryServiceImplement implements ICategoryService {
 
 	@Override
 	public void insert(CategoryModel category) {
-		// TODO Auto-generated method stub
+		CategoryModel cate = new CategoryModel();
+		cate = cateDAO.findById(cate.getCategoryid());
+		if(cate != null)
+		{
+			cateDAO.insert(category);
+		}
+		
 		
 	}
 
 	@Override
 	public void update(CategoryModel category) {
-		// TODO Auto-generated method stub
+		CategoryModel cate = new CategoryModel();
+		cate = cateDAO.findById(cate.getCategoryid());
+		if(cate != null)
+		{
+			cateDAO.update(category);
+		}
+		
+		
 		
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		CategoryModel cate = new CategoryModel();
+		cate = cateDAO.findById(cate.getCategoryid());
+		if(cate != null)
+		{
+			cateDAO.delete(id);
+		}
 	}
 
 	@Override
@@ -46,8 +63,7 @@ public class CategoryServiceImplement implements ICategoryService {
 
 	@Override
 	public void softDelete(CategoryModel category) {
-		// TODO Auto-generated method stub
-		
+			cateDAO.softDelete(category);
 	}
 
 	 

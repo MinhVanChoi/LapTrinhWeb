@@ -51,18 +51,20 @@ public class CategoryDAOImplement implements ICategoryDAO {
 				ps = conn.prepareStatement(query);
 				ps.setInt(1,id);
 				rs = ps.executeQuery();
+				CategoryModel category = new CategoryModel();
 				while (rs.next())
 				{
-					CategoryModel category = new CategoryModel();
+					
 					category.setCategoryid(rs.getInt("category_id"));
 					category.setCategoryname(rs.getString("category_name"));
 					category.setImages(rs.getString("category_images"));
 					category.setStatus(rs.getInt("category_status"));
-					return category;
+					
 				}
 				conn.close();
 				ps.close();
 				rs.close();
+				return category;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -92,7 +94,7 @@ public class CategoryDAOImplement implements ICategoryDAO {
 	@Override
 	public void update(CategoryModel category) {
 
-		String query = "UPDATE categories SET category_name = ?, category_images = ?, category_status = ? WHERE category_id = ?";;
+		String query = "UPDATE categories SET category_name = ?, category_images = ?, category_status = ? WHERE category_id = ?";
 		try {
 			conn = new DBConnectMySQL().getDatabaseConnection();
 			ps = conn.prepareStatement(query);
@@ -137,9 +139,10 @@ public class CategoryDAOImplement implements ICategoryDAO {
 			ps = conn.prepareStatement(query);
 			ps.setString(1,keyword);
 			rs = ps.executeQuery();
+			CategoryModel category = new CategoryModel();
+
 			while (rs.next())
 			{
-				CategoryModel category = new CategoryModel();
 				category.setCategoryid(rs.getInt("category_id"));
 				category.setCategoryname(rs.getString("category_name"));
 				category.setImages(rs.getString("category_images"));
