@@ -25,7 +25,12 @@
 
 			<td><img height="150" width="200" src="${imgUrl}" /></td>
 			<td>${cate.categoryname}</td>
-			<td>${cate.status}</td>
+			<td><c:if test="${cate.status == 1}">
+        	Hoạt động
+    </c:if> <c:if test="${cate.status != 1}">
+       		Khóa
+    </c:if></td>
+
 			<td>Image URL: ${imgUrl}</td>
 			<td><a
 				href="<c:url value='/admin/category/edit?id=${cate.categoryId}'/>">Sửa</a>

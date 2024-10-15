@@ -9,8 +9,11 @@
   <label for="images">Images:</label><br>
   <input type="file" id="images" name="images"  required><br>
   
-  <label for="status">Status:</label><br>
-  <input type="text" id="status" name="status" required><br><br>
-  
+<input type="radio" id="ston" name="status" value="1">
+<label for="css">Hoạt động</label>
+<br>
+<input type="radio" id="stoff" name="status" value="0">
+<label for="javascript">Khóa</label>
+  <br>
   <input type="submit" value="Submit">
 </form>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri ="jakarta.tags.core" %>
-    <form action="<c:url value='/admin/category/update'/>" method="post">
+    <form action="<c:url value='/admin/category/update'/>" method="post" enctype="multipart/form-data">>
         <input type="text" id="categoryid" name="categoryid" value="${cate.categoryId}" hidden="hidden"><br>
     
     <label for="categoryname">Category name:</label><br>

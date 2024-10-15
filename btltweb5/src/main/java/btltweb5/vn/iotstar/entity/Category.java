@@ -50,6 +50,14 @@ public class Category implements Serializable {
 
 
 
+	@Override
+	public String toString() {
+		return "Category [categoryId=" + categoryId + ", categoryname=" + categoryname + ", images=" + images
+				+ ", status=" + status + ", videos=" + videos + "]";
+	}
+
+
+
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
@@ -101,11 +109,18 @@ public class Category implements Serializable {
 	public void setVideos(List<Video> videos) {
 		this.videos = videos;
 	}
+	
 	 public Video addVideo(Video video) {
 		 getVideos().add(video);
 		 video.setCategory(this);
 		 return video;
 		 }
+
+	 public Video removeVideo(Video video) {
+	 getVideos().remove(video);
+	 video.setCategory(null);
+	 return video;
+	 }
 	
 	
 

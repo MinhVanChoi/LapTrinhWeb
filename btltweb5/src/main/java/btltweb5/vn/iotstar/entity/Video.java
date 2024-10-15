@@ -13,7 +13,7 @@ import jakarta.persistence.NamedQuery;
 
 @Entity
 @Table(name="videos")
-@NamedQuery(name="Video.finAll", query="select v FROM Video v")
+@NamedQuery(name="Video.findAll", query="select v FROM Video v")
 public class Video implements Serializable {
 	
 	private static final long serialVersionUID =1L;

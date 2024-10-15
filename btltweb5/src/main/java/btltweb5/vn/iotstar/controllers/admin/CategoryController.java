@@ -114,12 +114,9 @@ public class CategoryController extends HttpServlet {
 				uploadDir.mkdir();
 			}
 			try {
-				System.out.println("2");
 				Part part = req.getPart("images");
-				System.out.println("3");
 				if(part.getSize()>0)
 				{
-					System.out.println("1");
 					String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
 					// đổi tên file
 					int index = filename.lastIndexOf(".");
@@ -149,11 +146,45 @@ public class CategoryController extends HttpServlet {
 			String categoryname = req.getParameter("categoryname");
 			String status = req.getParameter("status");
 			int statuss= Integer.parseInt(status);
-			String images = "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/03/anh-meme-hai-1.jpg";
 			Category category = new Category();
+			
+			String fname="";
+			String uploadPath = getServletContext().getRealPath("") + Constant.UPLOAD_DIRECTORY;
+			System.out.print(uploadPath);
+		    File uploadDir = new File(uploadPath);
+			if(!uploadDir.exists())
+			{
+				uploadDir.mkdir();
+			}
+			try {
+				System.out.println("2");
+				Part part = req.getPart("images");
+				System.out.println("3");
+				if(part.getSize()>0)
+				{
+					System.out.println("1");
+					String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+					// đổi tên file
+					int index = filename.lastIndexOf(".");
+					String ext = filename.substring (index+1);
+					fname = System.currentTimeMillis()+"."+ext;
+					System.out.println(filename);
+					//upload
+	                part.write(uploadPath + File.separator + fname);
+					// ghi tên file
+					category.setImages(fname);
+				}
+				else
+				{
+					category.setImages("avata.png");
+				}
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
 			category.setCategoryId(categoryid);
 			category.setCategoryname(categoryname);
-			category.setImages(images);
 			category.setStatus(statuss);
 			cateService.update(category);
 			resp.sendRedirect(req.getContextPath()+"/admin/categories");
