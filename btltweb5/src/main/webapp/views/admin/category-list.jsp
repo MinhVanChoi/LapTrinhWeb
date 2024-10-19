@@ -20,7 +20,6 @@
 			</c:if>
 			<c:if test="${cate.images.substring(0,5)!='https' }">
 				<c:url value="/image?fname=${cate.images}" var="imgUrl"></c:url>
-
 			</c:if>
 
 			<td><img height="150" width="200" src="${imgUrl}" /></td>
