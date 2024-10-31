@@ -12,10 +12,11 @@
   	<input type="text" id="images" name="images" value="${category.images}"><br>
   
 	<p>Status</p>
-		<input type="radio" id="ston" name="status" value="${category.status}" checked >
-		<label for="hoatdong">Dang hoat dong</label><br>
-		<input type="radio" id="stoff" name="status" value="0" >
-		<label for="khoa">Khoa</label><br> 
+	<input type="radio" id="active" name="status" value="1" ${category.status == 1 ? 'checked' : ''}>
+	<label for="active">Đang hoạt động</label><br>
+	<input type="radio" id="inactive" name="status" value="0" ${category.status == 0 ? 'checked' : ''}>
+	<label for="inactive">Khóa</label><br>
+
   <c:if test="${category.isEdit}">
   		<input type="submit" value="Update">
   	</c:if>
@@ -24,5 +25,7 @@
   	</c:if>
   <input type="submit" value="Submit">
 </form>
+
+
 
 
