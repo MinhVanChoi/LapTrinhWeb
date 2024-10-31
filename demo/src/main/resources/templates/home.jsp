@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>	
-	<form action="/ltwebct5/home" method="post">
+	<form action="home" method="post">
 		<button type="submit">log out</button>
 	</form>
 </body>

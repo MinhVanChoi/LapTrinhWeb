@@ -15,6 +15,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	
 	@Bean
 	public FilterRegistrationBean<MySiteMeshFilter> siteMeshFilter() {
 		FilterRegistrationBean<MySiteMeshFilter> filterRegistrationBean = new FilterRegistrationBean<MySiteMeshFilter>();
