@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri ="jakarta.tags.core" %>
     <form action="<c:url value='/admin/category/update'/>" method="post">
-        <input type="text" id="categoryid" name="categoryid" value="${cate.categoryid}" hidden="hidden"><br>
     
     <label for="categoryname">Category name:</label><br>
     <input type="text" id="categoryname" name="categoryname" value="${cate.categoryname}"><br>

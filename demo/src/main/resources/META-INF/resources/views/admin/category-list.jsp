@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<a href="${pageContext.request.contextPath}/admin/category/add">Add
+<a href="${pageContext.request.contextPath}/admin/categories/add">Add
 	Category</a>
 <table style="border: 1px solid black; width: 100%;">
 	<tr>
@@ -24,13 +24,13 @@
 			</c:if>
 
 			<td><img height="150" width="200" src="${imgUrl}" /></td>
-			<td>${cate.categoryname}</td>
+			<td>${cate.name}</td>
 			<td>${cate.status}</td>
 			<td>Image URL: ${imgUrl}</td>
 			<td><a
-				href="<c:url value='/admin/category/edit?id=${cate.categoryid}'/>">Sửa</a>
+				href="<c:url value='/admin/categories/edit/${cate.id}'/>">Sửa</a>
 				| <a
-				href="<c:url value='/admin/category/delete?id=${cate.categoryid}'/>">Xóa</a>
+				href="<c:url value='/admin/categories/delete/${cate.id}'/>">Xóa</a>
 			</td>
 		</tr>
 	</c:forEach>
